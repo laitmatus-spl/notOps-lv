@@ -14,6 +14,16 @@ Route::get('/', function () {
     return view('home.index');
 })->name('home');
 
+// About
+Route::get('/about', function () {
+    return view('about.index');
+})->name('about.index');
+
+// Services
+Route::get('/services', function () {
+    return view('services.index');
+})->name('services.index');
+
 // Contact
 Route::get('/contact',  [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

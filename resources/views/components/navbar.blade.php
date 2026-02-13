@@ -14,10 +14,10 @@
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center gap-8">
-                <a href="{{ route('home') }}#services" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Services</a>
+                <a href="{{ route('services.index') }}" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Services</a>
                 <a href="{{ route('home') }}#framework" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Framework</a>
                 <a href="{{ route('home') }}#results" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Results</a>
-                <a href="{{ route('home') }}#why-notops" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Why Us</a>
+                <a href="{{ route('about.index') }}" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
                 <a href="{{ route('contact.index') }}" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
             </div>
 
@@ -55,10 +55,10 @@
          x-transition:leave-end="opacity-0 -translate-y-2"
          class="md:hidden bg-notops-dark/98 backdrop-blur-xl border-b border-white/5">
         <div class="px-4 py-6 space-y-4">
-            <a href="{{ route('home') }}#services" @click="open = false" class="block text-gray-300 hover:text-white text-base font-medium py-2 transition-colors">Services</a>
+            <a href="{{ route('services.index') }}" @click="open = false" class="block text-gray-300 hover:text-white text-base font-medium py-2 transition-colors">Services</a>
             <a href="{{ route('home') }}#framework" @click="open = false" class="block text-gray-300 hover:text-white text-base font-medium py-2 transition-colors">Framework</a>
             <a href="{{ route('home') }}#results" @click="open = false" class="block text-gray-300 hover:text-white text-base font-medium py-2 transition-colors">Results</a>
-            <a href="{{ route('home') }}#why-notops" @click="open = false" class="block text-gray-300 hover:text-white text-base font-medium py-2 transition-colors">Why Us</a>
+            <a href="{{ route('about.index') }}" @click="open = false" class="block text-gray-300 hover:text-white text-base font-medium py-2 transition-colors">About</a>
             <a href="{{ route('contact.index') }}" @click="open = false" class="block text-gray-300 hover:text-white text-base font-medium py-2 transition-colors">Contact</a>
             <div class="pt-4 border-t border-white/5">
                 <a href="{{ route('contact.index') }}" class="btn-primary w-full text-center block">Start Your Audit</a>
