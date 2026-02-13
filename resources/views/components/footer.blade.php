@@ -71,15 +71,15 @@
                     <h4 class="text-white/70 font-semibold text-xs tracking-widest uppercase mb-5">Services</h4>
                     <ul class="space-y-3">
                         @foreach([
-                            ['label' => 'Automation Audit',        'anchor' => '#framework'],
-                            ['label' => 'AI Opportunity Mapping',  'anchor' => '#framework'],
-                            ['label' => 'Workforce Optimisation',  'anchor' => '#framework'],
-                            ['label' => 'Process Re-Engineering',  'anchor' => '#framework'],
-                            ['label' => 'Finance Optimisation',    'anchor' => '#framework'],
-                            ['label' => 'Technology Assessment',   'anchor' => '#framework'],
+                            ['label' => 'Technical Audit',         'anchor' => '#technical-audit'],
+                            ['label' => 'Automation Consulting',   'anchor' => '#automation-consulting'],
+                            ['label' => 'AI Strategy & Integration', 'anchor' => '#ai-strategy'],
+                            ['label' => 'Workforce Optimization',  'anchor' => '#workforce-optimization'],
+                            ['label' => 'Process Optimization',    'anchor' => '#process-optimization'],
+                            ['label' => 'Finance Efficiency',      'anchor' => '#finance-efficiency'],
                         ] as $link)
                         <li>
-                            <a href="{{ route('home') }}{{ $link['anchor'] }}"
+                            <a href="{{ route('services.index') }}{{ $link['anchor'] }}"
                                class="text-white/35 hover:text-white/75 text-sm transition-colors duration-150 flex items-center gap-1.5 group">
                                 <span class="w-1 h-1 rounded-full bg-electric-blue/40 group-hover:bg-electric-blue transition-colors duration-150 shrink-0"></span>
                                 {{ $link['label'] }}
@@ -94,9 +94,10 @@
                     <h4 class="text-white/70 font-semibold text-xs tracking-widest uppercase mb-5">Company</h4>
                     <ul class="space-y-3">
                         @foreach([
-                            ['label' => 'Why NotOps',  'route' => route('home') . '#why-notops'],
+                            ['label' => 'About Us',    'route' => route('about.index')],
+                            ['label' => 'Services',    'route' => route('services.index')],
                             ['label' => 'Results',     'route' => route('home') . '#results'],
-                            ['label' => 'Our Process', 'route' => route('home') . '#execution'],
+                            ['label' => 'Framework',   'route' => route('home') . '#framework'],
                             ['label' => 'Contact',     'route' => route('contact.index')],
                         ] as $link)
                         <li>

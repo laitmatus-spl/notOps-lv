@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
-@section('title', 'Contact NotOps — Request a Free Technical & Operational Audit')
-@section('meta_description', 'Request a complimentary technical and operational audit from NotOps. We identify automation gaps, AI opportunities, and process waste across your enterprise. Respond within 24 hours.')
+@section('title', 'Contact NotOps — Let\'s Optimize Your Company')
+@section('meta_description', 'Book a free strategy call with NotOps. We help companies identify automation opportunities, reduce costs, and implement AI-driven transformation.')
 
 @section('content')
 
@@ -13,14 +13,13 @@
          style="background-image: linear-gradient(rgba(41,121,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(41,121,255,0.022) 1px, transparent 1px); background-size: 60px 60px;"></div>
 
     <div class="section-container relative z-10 text-center max-w-3xl mx-auto">
-        <span class="section-label mb-5">Free Audit Inquiry</span>
+        <span class="section-label mb-5">Contact Us</span>
         <h1 class="font-display font-800 text-white leading-tight mt-4 mb-5" style="font-size: clamp(2.2rem, 4vw, 3.2rem);">
-            Start With a Conversation.<br>
-            <span class="gradient-text">Leave With a Roadmap.</span>
+            Let's Optimize<br>
+            <span class="gradient-text">Your Company</span>
         </h1>
         <p class="text-white/50 text-base leading-relaxed max-w-xl mx-auto">
-            Fill out the form below. We will assess your situation honestly — and tell you upfront if an audit would not benefit you.
-            No pitch decks. No inflated scopes. Just straight answers.
+            Book a free strategy call to discuss your challenges. We'll provide honest feedback on whether we can help — no sales pressure, just straight answers.
         </p>
     </div>
 </section>
@@ -33,6 +32,31 @@
 
             {{-- Left column --}}
             <div class="lg:col-span-2 space-y-8">
+
+                {{-- Contact Information --}}
+                <div class="glass-card p-7">
+                    <h2 class="text-white font-display font-700 text-base mb-5">Contact Information</h2>
+                    <div class="space-y-4">
+                        @foreach([
+                            ['svg' => 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', 'label' => 'Email', 'value' => 'info@notops.com'],
+                            ['svg' => 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z', 'label' => 'Phone', 'value' => '+91 XXXXX XXXXX'],
+                            ['svg' => 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', 'label' => 'Location', 'value' => 'India (Serving Globally)'],
+                            ['svg' => 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', 'label' => 'Response Time', 'value' => 'Within 24 hours'],
+                        ] as $item)
+                        <div class="flex items-center gap-4">
+                            <div class="w-9 h-9 rounded-lg bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center shrink-0">
+                                <svg class="text-electric-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:16px;height:16px;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="{{ $item['svg'] }}"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-white/35 text-xs mb-0.5">{{ $item['label'] }}</div>
+                                <div class="text-white/75 text-sm font-medium">{{ $item['value'] }}</div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
 
                 {{-- What you get --}}
                 <div class="glass-card p-7">
@@ -57,31 +81,6 @@
                         </li>
                         @endforeach
                     </ul>
-                </div>
-
-                {{-- Contact details --}}
-                <div class="glass-card p-7">
-                    <h2 class="text-white font-display font-700 text-base mb-5">Contact Details</h2>
-                    <div class="space-y-4">
-                        @foreach([
-                            ['svg' => 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', 'label' => 'Response Time', 'value' => 'Within 24 hours'],
-                            ['svg' => 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', 'label' => 'Email', 'value' => 'hello@notops.co'],
-                            ['svg' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', 'label' => 'Confidentiality', 'value' => '100% NDA Protected'],
-                            ['svg' => 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', 'label' => 'Engagement Cost', 'value' => 'Audit scoping is always free'],
-                        ] as $item)
-                        <div class="flex items-center gap-4">
-                            <div class="w-9 h-9 rounded-lg bg-electric-blue/10 border border-electric-blue/20 flex items-center justify-center shrink-0">
-                                <svg class="text-electric-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:16px;height:16px;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="{{ $item['svg'] }}"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="text-white/35 text-xs mb-0.5">{{ $item['label'] }}</div>
-                                <div class="text-white/75 text-sm font-medium">{{ $item['value'] }}</div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
                 </div>
 
                 {{-- Process steps --}}
@@ -147,7 +146,7 @@
                     @endif
 
                     <div class="mb-8 pb-8 border-b border-white/5">
-                        <h2 class="text-white font-display font-700 text-2xl mb-2">Request Your Free Audit</h2>
+                        <h2 class="text-white font-display font-700 text-2xl mb-2">Book a Free Strategy Call</h2>
                         <p class="text-white/40 text-sm leading-relaxed">
                             The more context you share, the more targeted our initial response will be.
                             Fields marked <span class="text-electric-blue">*</span> are required.
@@ -235,6 +234,42 @@
                             </div>
                         </div>
 
+                        {{-- Industry + Company Size --}}
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="industry" class="form-label">Industry</label>
+                                <select
+                                    id="industry"
+                                    name="industry"
+                                    class="form-input @error('industry') border-red-500/60 @enderror"
+                                >
+                                    <option value="">Select your industry</option>
+                                    <option value="manufacturing" {{ old('industry') == 'manufacturing' ? 'selected' : '' }}>Manufacturing</option>
+                                    <option value="logistics" {{ old('industry') == 'logistics' ? 'selected' : '' }}>Logistics</option>
+                                    <option value="real_estate" {{ old('industry') == 'real_estate' ? 'selected' : '' }}>Real Estate</option>
+                                    <option value="healthcare" {{ old('industry') == 'healthcare' ? 'selected' : '' }}>Healthcare</option>
+                                    <option value="retail" {{ old('industry') == 'retail' ? 'selected' : '' }}>Retail</option>
+                                    <option value="it_saas" {{ old('industry') == 'it_saas' ? 'selected' : '' }}>IT & SaaS</option>
+                                    <option value="other" {{ old('industry') == 'other' ? 'selected' : '' }}>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="company_size" class="form-label">Company Size</label>
+                                <select
+                                    id="company_size"
+                                    name="company_size"
+                                    class="form-input @error('company_size') border-red-500/60 @enderror"
+                                >
+                                    <option value="">Select company size</option>
+                                    <option value="1-50" {{ old('company_size') == '1-50' ? 'selected' : '' }}>1-50 employees</option>
+                                    <option value="51-200" {{ old('company_size') == '51-200' ? 'selected' : '' }}>51-200 employees</option>
+                                    <option value="201-500" {{ old('company_size') == '201-500' ? 'selected' : '' }}>201-500 employees</option>
+                                    <option value="501-1000" {{ old('company_size') == '501-1000' ? 'selected' : '' }}>501-1000 employees</option>
+                                    <option value="1000+" {{ old('company_size') == '1000+' ? 'selected' : '' }}>1000+ employees</option>
+                                </select>
+                            </div>
+                        </div>
+
                         {{-- Message --}}
                         <div>
                             <label for="message" class="form-label">
@@ -268,7 +303,7 @@
                                 Your information is never sold or shared with third parties.
                             </p>
                             <button type="submit" class="btn-primary px-9 py-3.5 shrink-0">
-                                <span>Request Free Audit</span>
+                                <span>Schedule Free Consultation</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                                 </svg>
